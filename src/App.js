@@ -90,6 +90,110 @@ function App() {
         setDesc([])
     }
 
+    const createDetail = (
+        title,
+        place,
+        role,
+        date,
+        textdesc,
+        type
+        ) => {
+        return {
+            title: title,
+            place: place,
+            role: role,
+            date: date,
+            textdesc: textdesc,
+            type: type,
+        }
+    }
+
+    function WriteData() {
+        return (
+            <ul className='data-container'>
+                {contents.map(content => (
+                    <li className="data">
+                        <img src={pencilEdit} alt="edit"/>
+                        <img src={trashCan} alt="delete"/>
+                        {content.title}
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+    
+    function SectionEdu({}) {
+        return (
+            contentsEdu.map(contentEdu => (
+                <div key={uniqid()}>
+                    <div className="title-place" key={uniqid()}>
+                        <div className="title">{contentEdu.title}</div>
+                        <div className="place">{contentEdu.place}</div>
+                    </div>
+                    <div className="role-date">
+                        <div className="role">{contentEdu.role}</div>
+                        <div className="date">{contentEdu.date}</div>
+                    </div>
+                    <ul>
+                        {contentEdu.textdesc.split('\n').map(point => (
+                            <li><div className="description">{point}</div></li>
+                        ))}
+                    </ul>
+                </div>
+            ))
+        )
+    }
+    function SectionWork({}) {
+        return (
+            contentsWork.map(contentWork => (
+                <div key={uniqid()}>
+                    <div className="title-place">
+                        <div className="title">{contentWork.title}</div>
+                        <div className="place">{contentWork.place}</div>
+                    </div>
+                    <div className="role-date">
+                        <div className="role">{contentWork.role}</div>
+                        <div className="date">{contentWork.date}</div>
+                    </div>
+                    <ul>
+                        {contentWork.textdesc.split('\n').map(point => (
+                            <li><div className="description">{point}</div></li>
+                        ))}
+                    </ul>
+                </div>
+            ))
+        )
+    }
+    function SectionLead({}) {
+        return (
+            contentsLead.map(contentLead => (
+                <div key={uniqid()}>
+                    <div className="title-place">
+                        <div className="title">{contentLead.title}</div>
+                        <div className="place">{contentLead.place}</div>
+                    </div>
+                    <div className="role-date">
+                        <div className="role">{contentLead.role}</div>
+                        <div className="date">{contentLead.date}</div>
+                    </div>
+                    <ul>
+                        {contentLead.textdesc.split('\n').map(point => (
+                            <li><div className="description">{point}</div></li>
+                        ))}
+                    </ul>
+                </div>
+            ))
+        )
+    }
+    function SectionSkill() {
+        return (
+            <ul>
+                {skillset.split('\n').map(point => (
+                    <li className="skill"><div className="description">{point}</div></li>
+                ))}
+            </ul>
+        )
+    }
 
     return (
         <>
@@ -182,6 +286,16 @@ function App() {
                 <button className="to-work" onClick={handleSubmitContentWork}>Work Experience</button>
                 <button className="to-leader" onClick={handleSubmitContentLead}>Leadership Experience</button>
             </div>
+
+            <WriteData />
+
+            <InputSkillArea
+                label='Skills:'
+                value={skillset}
+                onChange={changeSkillset}
+                className='input-skill'
+                placeholder={'Proficient in English, conversant in Japanese.\nJavascript | HTML | CSS | React | Node.js | Express | MongoDB'}
+            />
         </>
     )
 }
@@ -225,6 +339,26 @@ function InputTextArea({
         ></textarea>
         </label>
     )
-  }
+}
+
+function InputSkillArea({
+    label,
+    value,
+    onChange,
+    className,
+    placeholder
+}) {
+    return (
+        <label className='insert skill-section'>
+            {label}
+            <textarea
+                value={value}
+                onChange={onChange}
+                className={className}
+                placeholder={placeholder}
+            ></textarea>
+        </label>
+    )
+}
 
 export default App
