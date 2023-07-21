@@ -296,6 +296,8 @@ function App() {
                 className='input-skill'
                 placeholder={'Proficient in English, conversant in Japanese.\nJavascript | HTML | CSS | React | Node.js | Express | MongoDB'}
             />
+
+            <footer onClick={redirectGithub}>Git Repo <img src={githubLogo} alt='Github Logo'/></footer>
         </>
     )
 }
