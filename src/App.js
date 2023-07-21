@@ -195,6 +195,10 @@ function App() {
         )
     }
 
+    function redirectGithub() {
+        window.open("https://github.com/BorgXQ/cv-application")
+    }
+
     return (
         <>
             <div className='header'>Professional CV Builder</div>
