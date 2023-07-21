@@ -17,6 +17,10 @@ function App() {
     const [textdesc, setTextdesc] = useState('')
     const [skillset, setSkillset] = useState('')
     const [contents, setContents] = useState([])
+    
+    const contentsEdu = contents.filter(content => content.type === 'edu')
+    const contentsWork = contents.filter(content => content.type === 'work')
+    const contentsLead = contents.filter(content => content.type === 'lead')
 
     const pdfRef = useRef()
 
