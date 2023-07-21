@@ -18,6 +18,8 @@ function App() {
     const [skillset, setSkillset] = useState('')
     const [contents, setContents] = useState([])
 
+    const pdfRef = useRef()
+
     const changeName = (e) => {
         setName(e.target.value)
     }
@@ -195,6 +197,34 @@ function App() {
         )
     }
 
+    function SaveToPDF() {
+        const downloadPDF = () => {
+            const input = pdfRef.current
+            html2canvas(input).then((canvas) => {
+                const imgData = canvas.toDataURL('image/png')
+                const pdf = new jsPDF('portrait', 'pt', 'a4', true)
+                const pdfWidth = pdf.internal.pageSize.getWidth()
+                const pdfHeight = pdf.internal.pageSize.getHeight()
+                const imgWidth = canvas.width
+                const imgHeight = canvas.height
+                const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight)
+                const imgX = (pdfWidth - imgWidth * ratio) / 2
+                const imgY = 30
+                pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
+                pdf.save('resume.pdf')
+            })
+        }
+      
+        return (
+            <button
+                onClick={downloadPDF}
+                className='download-btn'
+            >
+                Download Resume
+            </button>
+        )
+    }
+
     function redirectGithub() {
         window.open("https://github.com/BorgXQ/cv-application")
     }
@@ -224,6 +254,8 @@ function App() {
                 <hr></hr>
                 <SectionSkill />
             </div>
+
+            <SaveToPDF />
 
             <div className="name-pers-info">
                 <Input
