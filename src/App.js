@@ -134,6 +134,54 @@ function App() {
                     placeholder="Singapore | +65 1234 5678 | john.doe@gmail.com"
                 />
             </div>
+
+            <div className="section">
+                <div className="sub-section">
+                    <Input
+                        label='Company/Title:'
+                        value={title}
+                        onChange={changeTitle}
+                        className='input-title'
+                        placeholder="ABC Pte. Ltd"
+                    />
+                    <Input
+                        label='Location:'
+                        value={place}
+                        onChange={changePlace}
+                        className='input-location'
+                        placeholder="Singapore"
+                    />
+                </div>
+                <div className="sub-section">
+                    <Input
+                        label='Role:'
+                        value={role}
+                        onChange={changeRole}
+                        className='input-role'
+                        placeholder="Senior Software Engineer"
+                    />
+                    <Input
+                        label='Date:'
+                        value={date}
+                        onChange={changeDate}
+                        className='input-date'
+                        placeholder="February 20XX - Present"
+                    />
+                </div>
+                <InputTextArea
+                    label='Description:'
+                    value={textdesc}
+                    onChange={changeTextdesc}
+                    className='input-desc'
+                    placeholder={'Negotiated...., saving XX% of expected budget costs.\nCollaborated..., achieving a company growth of XX% in XX years.'}
+                />
+            </div>
+
+            <div className="btn-container">
+                <button className="to-edu" onClick={handleSubmitContentEdu}>Education</button>
+                <button className="to-work" onClick={handleSubmitContentWork}>Work Experience</button>
+                <button className="to-leader" onClick={handleSubmitContentLead}>Leadership Experience</button>
+            </div>
         </>
     )
 }
@@ -158,5 +206,25 @@ function Input({
         </label>
     )
 }
+
+function InputTextArea({
+    label,
+    value,
+    onChange,
+    className,
+    placeholder
+}) {
+    return (
+        <label className='insert'>
+        {label}
+        <textarea
+            value={value}
+            onChange={onChange}
+            className={className}
+            placeholder={placeholder}
+        ></textarea>
+        </label>
+    )
+  }
 
 export default App
