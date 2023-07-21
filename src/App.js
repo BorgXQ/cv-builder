@@ -43,6 +43,53 @@ function App() {
         setSkillset(e.target.value)
     }
 
+    const handleSubmitContentEdu = () => {
+        let array = textdesc.split('\n')
+        array = array.map(point => point.trim())
+        setDesc(array)
+    
+        let detail = createDetail(title, place, role, date, desc)
+        detail.type = 'edu'
+        setContents(contents => [...contents, detail])
+        setTitle('')
+        setPlace('')
+        setRole('')
+        setDate('')
+        setTextdesc('')
+        setDesc([])
+    }
+    const handleSubmitContentWork = () => {
+        let array = textdesc.split('\n')
+        array = array.map(point => point.trim())
+        setDesc(array)
+
+        let detail = createDetail(title, place, role, date, textdesc)
+        detail.type = 'work'
+        setContents(contents => [...contents, detail])
+        console.log(detail)
+        setTitle('')
+        setPlace('')
+        setRole('')
+        setDate('')
+        setTextdesc('')
+        setDesc([])
+    }
+    const handleSubmitContentLead = () => {
+        let array = textdesc.split('\n')
+        array = array.map(point => point.trim())
+        setDesc(array)
+    
+        let detail = createDetail(title, place, role, date, desc)
+        detail.type = 'lead'
+        setContents(contents => [...contents, detail])
+        setTitle('')
+        setPlace('')
+        setRole('')
+        setDate('')
+        setTextdesc('')
+        setDesc([])
+    }
+
 
     return (
         <>
