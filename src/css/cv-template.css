@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14.67px;
+}
+
+:root {
+    --bg-color: #FFFBF1;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+}
+
+#root {
+    width: 1000px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.a4 {
+    background-color: #FFFFFF;
+    height: 297mm;
+    width: 210mm;
+    padding: 1.91cm 2.54cm;
+    border: groove 2px rgba(0, 0, 0, .2);
+    margin-top: 20px;
+}
+
+hr {
+    border-top: 1px solid black;
+}
+
+.full-name {
+    text-align: center;
+    font-size: 24px;
+}
+
+.personal-info {
+    text-align: center;
+    line-height: 24px;
+}
+
+.heading {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.title-place,
+.role-date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-place {
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.role-date {
+    font-style: italic;
+}
+
+ul {
+    list-style-position: outside;
+    margin-left: 20px;
+}
+
+li {
+    font-size: 18px;
+}
+
+.description {
+    font-size: 14.67px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.skill {
+    list-style-type: circle;
+}
+
+footer {
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: transform .2s;
+}
+
+footer:hover {
+    transform: translateY(-2px);
+}

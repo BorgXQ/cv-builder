@@ -1,0 +1,90 @@
+.name-pers-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px;
+}
+
+input {
+    width: 200px;
+    padding: 4px;
+}
+
+textarea {
+    padding: 4px;
+}
+
+button {
+    padding: 4px;
+    cursor: pointer;
+}
+
+.download-btn {
+    margin-top: 20px;
+}
+
+.insert {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-pers-info {
+    margin-top: 20px;
+}
+
+.input-pers-info {
+    width: 400px;
+}
+
+.section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sub-section {
+    display: flex;
+}
+
+.input-desc {
+    width: 600px;
+    height: 200px;
+}
+
+.btn-container {
+    display: flex;
+    gap: 12px;
+}
+
+.data-container {
+    margin-top: 10px;
+}
+
+.data {
+    font-style: italic;
+    font-size: 14.67px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+img {
+    width: 16px;
+    cursor: pointer;
+}
+
+.skill-section {
+    margin-top: 32px;
+}
+
+.input-skill {
+    width: 440px;
+    height: 80px;
+}
