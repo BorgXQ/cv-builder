@@ -28,7 +28,7 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.(?:js|mjs|cjs)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
