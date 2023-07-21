@@ -6,3 +6,9 @@ import githubLogo from './assets/github-logo.svg'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
 import './css/main.css'
+
+function App() {
+    return (
+        <></>
+    )
+}
