@@ -10,14 +10,39 @@ import './css/main.css'
 function App() {
     const [name, setName] = useState('')
     const [info, setInfo] = useState('')
+    const [title, setTitle] = useState('')
+    const [place, setPlace] = useState('')
+    const [role, setRole] = useState('')
+    const [date, setDate] = useState('')
+    const [textdesc, setTextdesc] = useState('')
+    const [skillset, setSkillset] = useState('')
+    const [contents, setContents] = useState([])
 
     const changeName = (e) => {
         setName(e.target.value)
     }
-
     const changeInfo = (e) => {
         setInfo(e.target.value)
     }
+    const changeTitle = (e) => {
+        setTitle(e.target.value)
+      }
+    const changePlace = (e) => {
+        setPlace(e.target.value)
+    }
+    const changeRole = (e) => {
+        setRole(e.target.value)
+    }
+    const changeDate = (e) => {
+        setDate(e.target.value)
+    }
+    const changeTextdesc = (e) => {
+        setTextdesc(e.target.value)
+    }
+    const changeSkillset = (e) => {
+        setSkillset(e.target.value)
+    }
+
 
     return (
         <>
@@ -27,6 +52,22 @@ function App() {
                 <p className="personal-info">
                     {info}
                 </p>
+
+                <div className="heading">EDUCATION</div>
+                <hr></hr>
+                <SectionEdu />
+
+                <div className="heading">WORK EXPERIENCE</div>
+                <hr></hr>
+                <SectionWork />
+
+                <div className="heading">LEADERSHIP EXPERIENCE</div>
+                <hr></hr>
+                <SectionLead />
+
+                <div className="heading">SKILLS</div>
+                <hr></hr>
+                <SectionSkill />
             </div>
 
             <div className="name-pers-info">
