@@ -50,11 +50,7 @@ function App() {
     }
 
     const handleSubmitContentEdu = () => {
-        let array = textdesc.split('\n')
-        array = array.map(point => point.trim())
-        setDesc(array)
-    
-        let detail = createDetail(title, place, role, date, desc)
+        let detail = createDetail(title, place, role, date, textdesc)
         detail.type = 'edu'
         setContents(contents => [...contents, detail])
         setTitle('')
@@ -62,13 +58,8 @@ function App() {
         setRole('')
         setDate('')
         setTextdesc('')
-        setDesc([])
     }
     const handleSubmitContentWork = () => {
-        let array = textdesc.split('\n')
-        array = array.map(point => point.trim())
-        setDesc(array)
-
         let detail = createDetail(title, place, role, date, textdesc)
         detail.type = 'work'
         setContents(contents => [...contents, detail])
@@ -78,14 +69,9 @@ function App() {
         setRole('')
         setDate('')
         setTextdesc('')
-        setDesc([])
     }
     const handleSubmitContentLead = () => {
-        let array = textdesc.split('\n')
-        array = array.map(point => point.trim())
-        setDesc(array)
-    
-        let detail = createDetail(title, place, role, date, desc)
+        let detail = createDetail(title, place, role, date, textdesc)
         detail.type = 'lead'
         setContents(contents => [...contents, detail])
         setTitle('')
@@ -93,7 +79,6 @@ function App() {
         setRole('')
         setDate('')
         setTextdesc('')
-        setDesc([])
     }
 
     const createDetail = (
