@@ -1,4 +1,4 @@
-import { React, useState, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import uniqid from 'uniqid'
 import pencilEdit from './assets/pencil-edit.svg'
 import trashCan from './assets/trash-can.svg'
